@@ -1,0 +1,22 @@
+h1{
+  color:rgb(222, 18, 18);
+  background-color:aquamarine;
+  text-align: center;  /* left, right, center | It will work only for Block element  */
+  text-decoration-line : underline;  /* overline, line-through, underline */
+  text-decoration-color : black;
+  text-decoration-style : solid;  /* solid, double, dotted, dashed, wavy */
+  text-decoration-thickness : 2px;   /* Measurement - number px */
+  text-transform: uppercase   /* uppercase, lowercase, capitalize */
+}
+
+label{
+  color: black;
+  background-color: yellow;
+}
+
+p{
+  text-indent: 100px;
+  letter-spacing: 5px;
+  word-spacing: 15px;
+  line-height : 3.5    /* Measurement - Decimal value  */
+}
