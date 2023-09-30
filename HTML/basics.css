@@ -1,13 +1,18 @@
-h1{
+/* selector{
+  property : value;
+  property : value;
+} */
+
+/* h1{
   color:rgb(222, 18, 18);
   background-color:aquamarine;
-  text-align: center;  /* left, right, center | It will work only for Block element  */
-  text-decoration-line : underline;  /* overline, line-through, underline */
+  text-align: center;   left, right, center | It will work only for Block element 
+  text-decoration-line : underline;   overline, line-through, underline
   text-decoration-color : black;
-  text-decoration-style : solid;  /* solid, double, dotted, dashed, wavy */
-  text-decoration-thickness : 2px;   /* Measurement - number px */
-  text-transform: uppercase   /* uppercase, lowercase, capitalize */
-}
+  text-decoration-style : solid;  solid, double, dotted, dashed, wavy
+  text-decoration-thickness : 2px;    Measurement - number px
+  text-transform: uppercase   uppercase, lowercase, capitalize
+} */
 
 label{
   color: black;
@@ -20,3 +25,49 @@ p{
   word-spacing: 15px;
   line-height : 3.5    /* Measurement - Decimal value  */
 }
+
+/* syntax for class selector 
+CSS file
+.anyName{
+  property : value;
+  property : value;
+}
+HTML file
+<h1 class="anyName"></h1> */
+
+.dog{
+  color: violet;
+  background-color: black;
+}
+
+.dog1{
+  color: red;
+  background-color: blue;
+}
+
+/* CSS Units
+1. Absolute Length - Fixed structure 
+2. Relative Length - Varying structure */
+
+.absolute-box{
+  width: 500px;
+  height: 200px;
+  background-color: brown;
+}
+
+.relative-viewport-box{
+  width: 50vw;
+  height: 25vh;
+  background-color: blue;
+}
+
+/* Browser Width - 1000 * 1/2 - 500
+Browser Height - 731.20 * 1/4 - 182.8 */
+
+.relative-percent-box{
+  width: 75%;
+  height: 50%;
+  background-color: black;
+}
+
+/* Parent Element Width - 500 * 3/4 - 375 */
