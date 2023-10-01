@@ -14,10 +14,10 @@
   text-transform: uppercase   uppercase, lowercase, capitalize
 } */
 
-label{
+/* label{
   color: black;
   background-color: yellow;
-}
+} */
 
 p{
   text-indent: 100px;
@@ -71,3 +71,34 @@ Browser Height - 731.20 * 1/4 - 182.8 */
 }
 
 /* Parent Element Width - 500 * 3/4 - 375 */
+
+.heading-none{
+  background-color: red;
+  color: white;
+  width: 500px;
+  height: 300px;
+  display: none;
+}
+
+.font-property{
+  /* font-style: italic; */
+  font-size: 60px;
+  font-weight: lighter;
+  font-family: 'Pacifico', cursive;
+  border-style: solid;
+  border-color: red;
+  border-width: 5px;
+  border-radius: 50px;
+}
+
+.border-outline{
+  border: 5px solid blue;
+  border-radius: 50px;
+}
+
+.cirlce-shape{
+  width: 300px;
+  height: 300px;
+  background-color: red;
+  border-radius: 150px;
+}
