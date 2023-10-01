@@ -79,8 +79,8 @@ Browser Height - 731.20 * 1/4 - 182.8 */
   height: 300px;
   display: none;
 }
-
 .font-property{
+  /* hello */
   /* font-style: italic; */
   font-size: 60px;
   font-weight: lighter;
@@ -101,4 +101,31 @@ Browser Height - 731.20 * 1/4 - 182.8 */
   height: 300px;
   background-color: red;
   border-radius: 150px;
+}
+
+.padding-text{
+  /* padding: 140px; */
+  padding-top: 50px;
+  padding-left: 50px;
+  border: 2px solid;
+}
+
+.margin-text{
+  margin-top: 50px;
+  margin-left: 50px;
+  border: 2px solid;
+}
+
+.table-outline{
+  border: 1px solid;
+  border-collapse: collapse;
+}
+
+.name-column{
+  width: 200px;
+}
+
+.table-heading{
+  background-color: green;
+  color: white;
 }
