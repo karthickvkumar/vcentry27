@@ -117,7 +117,7 @@ Browser Height - 731.20 * 1/4 - 182.8 */
 }
 
 .table-outline{
-  border: 1px solid;
+  border: 1px solid black;
   border-collapse: collapse;
 }
 
