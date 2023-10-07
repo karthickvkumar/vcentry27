@@ -1,0 +1,32 @@
+.flex-container{
+  height: 50vh;
+  border: 2px solid red;
+  display: flex;
+  flex-direction: row; /* row | row-reverse | column | column-reverse */
+  flex-wrap: wrap; /* nowrap | wrap | wrap-reverse  */
+  justify-content: center; /*flex-start | flex-end | center | space-between | space-around | space-evenly */
+  align-items: center; /* flex-start | flex-end | center */
+}
+
+/* How Justify Content work ? --- Based on Flex Direction
+Aligment of this property will work based on the Flex-Direction
+Row - X axis 
+Column - Y axis
+
+#Case 1
+flex-direction : row;
+justify-content: flex-end; (align in x-axis direction)
+
+#Case 2
+flex-direction : column;
+justify-content: flex-end; (align in y-axis direction)  */
+
+
+/* How Align Items work ? --- Opposite to Justify Content 
+#Case 1
+justify-content - X direction
+align-items - Y direction 
+
+#Case 2
+justify-content - Y direction
+align-items - X direction  */

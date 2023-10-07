@@ -1,0 +1,35 @@
+.outer-container{
+  height: 100vh;
+  border: 2px solid red;
+  box-sizing: border-box; /* div height - div border height */
+}
+
+.body{
+  margin: 0px;
+}
+
+.header{
+  height: 10%;
+  border: 2px solid blue;
+  box-sizing: border-box;
+}
+
+.sidebar{
+  height: 100%;
+  border: 2px solid green;
+  box-sizing: border-box;
+  width: 20%;
+}
+
+.content{
+  height: 100%;
+  width: 80%;
+  border: 2px solid black;
+  box-sizing: border-box;
+}
+
+.wrapper{
+  height: 90%;
+  display: flex;
+  flex-direction: row;
+}
