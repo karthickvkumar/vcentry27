@@ -12,6 +12,8 @@
   height: 10%;
   border: 2px solid blue;
   box-sizing: border-box;
+  display: flex;
+    flex-direction: row;
 }
 
 .sidebar{
@@ -68,4 +70,40 @@
   height: 10%;
   border: 2px solid red;
   margin: 10px;
+}
+
+.menu-icon{
+  color: rgb(0, 0, 0);
+  font-size: 30px;
+}
+
+.youtube-logo{
+  display: flex;
+  flex-direction: row;
+  width: 20%;
+    border: 2px solid;
+    justify-content: center;
+    align-items: center;
+}
+
+.youtube-search{
+  display: flex;
+  flex-direction: row;
+  width: 65%;
+    border: 2px solid;
+    justify-content: center;
+    align-items: center;
+}
+
+.youtube-settings{
+  width: 15%;
+  border: 2px solid;
+}
+
+.search-input{
+  width: 50%;
+  height: 45%;
+  font-size: 20px;
+  border-radius: 50px;
+  padding-left: 20px;
 }
