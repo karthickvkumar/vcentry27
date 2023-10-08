@@ -19,6 +19,7 @@
   border: 2px solid green;
   box-sizing: border-box;
   width: 20%;
+  overflow: auto;
 }
 
 .content{
@@ -61,4 +62,10 @@
   width: 350px;
   height: 250px;
   margin-top: 25px;
+}
+
+.sidebar-menu{
+  height: 10%;
+  border: 2px solid red;
+  margin: 10px;
 }
