@@ -33,3 +33,24 @@
   display: flex;
   flex-direction: row;
 }
+
+.video-topics{
+  border: 2px solid black;
+  height: 8%;
+  box-sizing: border-box;
+}
+
+.all-videos{
+  border: 2px solid red;
+  height: 92%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.video-player{
+  border: 2px solid black;
+  width: 300px;
+  height: 200px;
+}
