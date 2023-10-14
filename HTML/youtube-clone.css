@@ -107,3 +107,49 @@
   border-radius: 50px;
   padding-left: 20px;
 }
+
+.video-desc{
+  border: 2px solid blue;
+  height: 35%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+}
+
+.video-content{
+  border: 2px solid red;
+  height: 65%;
+  box-sizing: border-box;
+
+}
+
+.author-logo{
+  border: 2px solid;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.author-desc{
+  border: 2px solid;
+  width: 80%;
+}
+
+.video-thumbnail{
+  width: 100%;
+    height: 100%;
+    object-fit: cover; /* cover, contains, fill */
+    object-position: bottom;  /* bottom, center, left, right, top */
+}
+
+.author-logo-container{
+  width: 55px;
+  height: 55px;
+  border-radius: 30px;
+}
+
+.circle-logo{
+    border-radius: 30px;
+    object-position: right;
+  }
