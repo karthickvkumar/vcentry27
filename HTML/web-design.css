@@ -29,6 +29,9 @@
   height: 35%;
   border: 2px solid red;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
 .heading-image{
@@ -45,4 +48,26 @@
   border: 2px solid red;
     box-sizing: border-box;
     height: 50%;
+    display: flex;
+    flex-direction: row;
+}
+
+.thumbnail{
+  width: 15%;
+  border: 2px solid;
+}
+
+.thumbnail-text{
+  width: 65%;
+  border: 2px solid;
+}
+
+.thumbnail-date{
+  width: 20%;
+  border: 2px solid;
+}
+
+.section-3-content{
+  width: 25%;
+  border: 2px solid;
 }
