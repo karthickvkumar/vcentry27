@@ -13,6 +13,8 @@
   height: 35%;
   border: 2px solid red;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
 }
 
 .section-2 {
@@ -27,4 +29,20 @@
   height: 35%;
   border: 2px solid red;
   box-sizing: border-box;
+}
+
+.heading-image{
+  border: 2px solid;
+  width: 25%;
+}
+
+.heading-content{
+  border: 2px solid;
+    width: 75%;
+}
+
+.inner-heading-content{
+  border: 2px solid red;
+    box-sizing: border-box;
+    height: 50%;
 }
