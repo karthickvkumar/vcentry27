@@ -1,0 +1,17 @@
+.form-alignment{
+  width: 300px;
+}
+
+
+.card-custome{
+  width: 300px;
+}
+
+.btn-custom{
+  background-color : red
+}
+
+.btn-custom:hover{
+  background-color : rgb(99, 37, 37)
+}
+
