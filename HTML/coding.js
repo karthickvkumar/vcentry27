@@ -205,3 +205,60 @@ function findEvenNumber(){
     }
   }
 }
+
+// Map - Only specific for Array, Use to iterate Array value
+// syntax
+// Need a variable which has Array value 
+
+// array_varaible_name.map(function(value, index){
+//   print value one by one
+// });
+
+studentList.map(function(value, index){
+  console.log(value);
+  return value;
+});
+
+// Switch - Flow Control 
+// syntax 
+// switch(expression){  whole value
+//   case value :
+//     code logic
+//     break;
+//   case value :
+//     code logic
+//     break;
+
+//   default:
+//     code logic
+// }
+
+// Problem - To perform basic Arithmetic operator 
+// Input - Number 1, Number 2, Arithmetic Operator 
+
+function calculator(){
+  var number1 = prompt("Enter your first Value");
+  var number2 = prompt("Enter your second number");
+  var opertor = prompt("Enter any one Operator (+, - , * , /)");
+  var result;
+  switch(opertor){
+    case "+":
+      result = number1 + number2;
+      alert(result);
+      break;
+    case "-":
+      result = number1 - number2;
+      alert(result);
+      break;
+    case "*":
+      result = number1 * number2;
+      alert(result);
+      break;
+    case "/":
+      result = number1 / number2;
+      alert(result);
+      break;
+    default:
+      alert("Invalid Operator");
+  }
+}
