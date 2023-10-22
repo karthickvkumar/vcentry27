@@ -243,7 +243,7 @@ function calculator(){
   var result;
   switch(opertor){
     case "+":
-      result = number1 + number2;
+      result = parseInt(number1) + parseInt(number2);
       alert(result);
       break;
     case "-":
@@ -261,4 +261,60 @@ function calculator(){
     default:
       alert("Invalid Operator");
   }
+}
+
+// Error - bug 
+// 1. Syntax Error - Incorrect coding synatx (red output in console)
+// 2. Reference Error - Using Undeclared vaiable name or Function name (red output in console) 
+// 3. Logical Error - Invalid or unexpected output (No red output in console) (only solution is Debugging)
+
+// Scope - Used to set Accessibility for variable
+// 1. Local Scope - Variable can be accessed inside Function not Outside
+// 2. Global Scope - Variable can be accessed anywhere 
+
+var textGolbal = "Welcome All! -- Global";
+
+function printMessage(){
+  var text = "Welcome All!";
+  console.log(text);
+  console.log(textGolbal);
+};
+
+function showMessage(){
+  console.log(text);
+  console.log(textGolbal);
+}
+
+// Timers 
+// setTimeout - Code will run after the given time duration
+// clearTimeout - It will stop the setTimeout
+// sytnax 
+// setTimeout(function(){
+//   code logic 
+// }, timeduration);
+
+// timeduration - millisecond, 1 second - 1000 ms 
+
+function TimeDelay(){
+  alert("TimeDelay function working")
+  var timer = setTimeout(function(){
+    alert("Inside SetTimeout code")
+  }, 5000);
+
+  //clearTimeout(timer);
+}
+
+// setInterval - Code will run repeat mode for given time duration 
+// clearInterval - It will stop the repeat mode of set interval 
+// setInterval(function(){
+//  code logic 
+// }, timeduration)
+
+function RepeatMode(){
+  alert("RepeatMode function working");
+  var interval = setInterval(function(){
+    alert("Inside setInterval code")
+  }, 5000);
+
+  //clearInterval(interval);
 }
