@@ -177,3 +177,31 @@ function tickerPrice(){
     alert("25% Off in Ticker Price ");
   }
 }
+
+// Loop - for 
+// syntax 
+// for(initialization; condition; increment/decreament){
+//   coding logic
+// }
+
+// initialization - Loop starting point 
+// condition - Loop ending point basing on false
+// increment/decreament - Loop movemnt control 
+
+for(var i = 1; i <= 10; i++ ){  
+  console.log("The loop is running", i);
+}
+
+// Problem - To find all even number for the given number of limit
+// 1. we need to give a number input (last number)
+// 2. To use loop for moving the count from 1 to given last number 
+// 3. Logic for even number - Number % 2 == 0 -- Even number  
+
+function findEvenNumber(){
+  var lastNumber = prompt("Enter your last number");
+  for(var startCount = 1; startCount <= lastNumber; startCount++){
+    if(startCount % 2 === 0){
+      console.log(startCount, "is a Even number");
+    }
+  }
+}
