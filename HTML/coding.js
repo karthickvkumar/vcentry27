@@ -313,7 +313,7 @@ function TimeDelay(){
 function RepeatMode(){
   alert("RepeatMode function working");
   var interval = setInterval(function(){
-    alert("Inside setInterval code")
+    alert("Inside setInterval code");
   }, 5000);
 
   //clearInterval(interval);
