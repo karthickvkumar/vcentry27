@@ -54,6 +54,7 @@ var studentInfomation = {
 // var variable_name = [value1, value2, ... , valueN];
 // value - Primitive or Object type of data
 
+
 var studentList = [
   {
     firstName : "mr.abc",
