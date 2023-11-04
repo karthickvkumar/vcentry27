@@ -269,8 +269,8 @@ function calculator(){
 // 3. Logical Error - Invalid or unexpected output (No red output in console) (only solution is Debugging)
 
 // Scope - Used to set Accessibility for variable
-// 1. Local Scope - Variable can be accessed inside Function not Outside
-// 2. Global Scope - Variable can be accessed anywhere 
+// 1. Local Scope - (Creating vairable inside Function) Variable can be accessed inside Function not Outside Function
+// 2. Global Scope - (Creating vairable outside Function) Variable can be accessed anywhere 
 
 var textGolbal = "Welcome All! -- Global";
 
