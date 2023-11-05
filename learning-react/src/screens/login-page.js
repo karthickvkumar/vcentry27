@@ -10,7 +10,7 @@ const LoginScreen = () => {
   
   let message = "Good Morning!";
   let greeting = "Hello, Welcome"; 
-
+  
   const displayMessage = () => {
     // alert(greeting);
     alert(text);

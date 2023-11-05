@@ -319,3 +319,26 @@ function RepeatMode(){
 
   //clearInterval(interval);
 }
+
+// Operations in Array (run-time)
+// There are 4 types of operation - insert value, read value, edit value, delete value
+
+var messageList = []; // Empty array
+
+// Insert value into Array 
+// syntax
+// array_variable_name.push(value);
+
+messageList.push("hello");
+messageList.push("good", "day", "night");
+
+// ES6 - [...array_variable_name, value];
+[...messageList, "hello"]
+
+console.log(messageList);
+
+// To print Array value
+// syntax 
+// array_variable_name.map((value, index) => {
+//   return( value + HTML )
+// })
