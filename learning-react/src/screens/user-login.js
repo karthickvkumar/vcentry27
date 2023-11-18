@@ -11,7 +11,7 @@ const UserLoginPage = () => {
 
   const getInputValue = (event) => {
     //console.log(event.target.value, event.target.id);
-    //   dynamicfunctionName({...dynamicVariableName, [event.target.id] : event.target.value })
+    //dynamicfunctionName({...dynamicVariableName, [event.target.id] : event.target.value })
 
     updateLoginForm({...loginForm, [event.target.id] : event.target.value});
   }
