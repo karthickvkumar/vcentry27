@@ -8,7 +8,7 @@ const AccountCreationPage = () => {
     passwordField : "",
     DOBField : "",
     genderField : "",
-    hobbiesField : "",
+    hobbiesField : [],
     educationField : "",
     addressField : ""
   });
@@ -16,8 +16,12 @@ const AccountCreationPage = () => {
   const getInputValue = (event) => {
     //console.log(event.target.value);
     //dynamicfunctionName({...dynamicVariableName, [event.target.id] : event.target.value })
-
-    updateAccountForm({...accountForm,  [event.target.id] : event.target.value})
+    if(event.target.id === "hobbiesField"){
+      accountForm.hobbiesField.push(event.target.value);
+    }
+    else{
+      updateAccountForm({...accountForm,  [event.target.id] : event.target.value})
+    }
   }
 
   const submitAccountForm = () => {
@@ -45,19 +49,19 @@ const AccountCreationPage = () => {
       </div>
       <div>
         <label>Select your Gender :</label>
-        <input id="genderField" type="radio" name="gender" onChange={getInputValue}/>Male
-        <input id="genderField" type="radio" name="gender" onChange={getInputValue}/>Female
-        <input id="genderField" type="radio" name="gender" onChange={getInputValue}/>Others
+        <input id="genderField" type="radio" name="gender" onChange={getInputValue} value="Male"/>Male
+        <input id="genderField" type="radio" name="gender" onChange={getInputValue} value="Female"/>Female
+        <input id="genderField" type="radio" name="gender" onChange={getInputValue} value="Others"/>Others
       </div>
       <div>
         <label>Select your Hobbies :</label>
-        <input id="hobbiesField" type="checkbox" onChange={getInputValue}/>Cricket
-        <input id="hobbiesField" type="checkbox" onChange={getInputValue}/>Football
-        <input id="hobbiesField" type="checkbox" onChange={getInputValue}/>Hockey
-        <input id="hobbiesField" type="checkbox" onChange={getInputValue}/>Baseball
-        <input id="hobbiesField" type="checkbox" onChange={getInputValue}/>Chess
-        <input id="hobbiesField" type="checkbox" onChange={getInputValue}/>Cycling
-        <input id="hobbiesField" type="checkbox" onChange={getInputValue}/>Trecking
+        <input id="hobbiesField" type="checkbox" onChange={getInputValue} value="Cricket"/>Cricket
+        <input id="hobbiesField" type="checkbox" onChange={getInputValue} value="Football"/>Football
+        <input id="hobbiesField" type="checkbox" onChange={getInputValue} value="Hockey"/>Hockey
+        <input id="hobbiesField" type="checkbox" onChange={getInputValue} value="Baseball"/>Baseball
+        <input id="hobbiesField" type="checkbox" onChange={getInputValue} value="Chess"/>Chess
+        <input id="hobbiesField" type="checkbox" onChange={getInputValue} value="Cycling"/>Cycling
+        <input id="hobbiesField" type="checkbox" onChange={getInputValue} value="Trecking"/>Trecking
       </div>
       <div>
         <label>Select your Qualifiation :</label>
