@@ -12,6 +12,8 @@ const LandingScreen = () => {
       <NavLink to="/contact">Go to Contact Page</NavLink>
       <br />
       <NavLink to="/todo">Go to Todo App Page</NavLink>
+      <br />
+      <NavLink to="/signup">Click here for User Login Page</NavLink>
     </div>
   )
 }
