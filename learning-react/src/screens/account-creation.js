@@ -17,7 +17,14 @@ const AccountCreationPage = () => {
     //console.log(event.target.value);
     //dynamicfunctionName({...dynamicVariableName, [event.target.id] : event.target.value })
     if(event.target.id === "hobbiesField"){
-      accountForm.hobbiesField.push(event.target.value);
+      if(event.target.checked){
+        accountForm.hobbiesField.push(event.target.value);
+      }
+      else{
+        // remove
+        const index = accountForm.hobbiesField.indexOf(event.target.value);
+        accountForm.hobbiesField.splice(index, 1);
+      }
     }
     else{
       updateAccountForm({...accountForm,  [event.target.id] : event.target.value})
