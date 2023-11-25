@@ -8,6 +8,7 @@ import LandingScreen from "./screens/landing-page";
 import ToDoScreen from "./screens/todo-app-page";
 import UserLoginPage from "./screens/user-login";
 import AccountCreationPage from "./screens/account-creation";
+import UserProfileScreen from "./screens/user-profile";
 
 function App(){
   return(
@@ -20,6 +21,7 @@ function App(){
         <Route path="todo" element={<ToDoScreen></ToDoScreen>}></Route>
         <Route path="signup" element={<UserLoginPage></UserLoginPage>}></Route>
         <Route path="account" element={<AccountCreationPage></AccountCreationPage>}></Route>
+        <Route path="user" element={<UserProfileScreen></UserProfileScreen>}></Route>
       </Routes>
     </BrowserRouter>
   )
