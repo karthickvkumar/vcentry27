@@ -1,0 +1,12 @@
+.user-box{
+  display: flex;
+  border: 1px solid;
+  width: 350px;
+  height: 120px;
+}
+
+.main-user-container{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 10px;
+}
