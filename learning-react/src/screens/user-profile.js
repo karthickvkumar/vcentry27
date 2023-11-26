@@ -10,6 +10,7 @@ const UserProfileScreen = () => {
     
     axios.get(url)
       .then((response) => {
+        console.log(response);
         updateProfileList(response.data.data);
       })
       .catch((error) => {
@@ -26,7 +27,7 @@ const UserProfileScreen = () => {
         <td>{value.last_name}</td>
         <td>{value.email}</td>
         <td>
-          <img src={value.avatar} width="30" alt=""/>
+          <img src={value.avatar} width="30" alt="" />
         </td>
       </tr>
     )

@@ -9,6 +9,7 @@ import ToDoScreen from "./screens/todo-app-page";
 import UserLoginPage from "./screens/user-login";
 import AccountCreationPage from "./screens/account-creation";
 import UserProfileScreen from "./screens/user-profile";
+import GETAllUsersPage from "./screens/get-all-user";
 
 function App(){
   return(
@@ -22,6 +23,8 @@ function App(){
         <Route path="signup" element={<UserLoginPage></UserLoginPage>}></Route>
         <Route path="account" element={<AccountCreationPage></AccountCreationPage>}></Route>
         <Route path="user" element={<UserProfileScreen></UserProfileScreen>}></Route>
+        <Route path="all" element={<GETAllUsersPage></GETAllUsersPage>}></Route>
+
       </Routes>
     </BrowserRouter>
   )
