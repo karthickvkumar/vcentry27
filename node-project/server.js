@@ -13,8 +13,12 @@ app.use(cors({
 
 app.use(express.json());
 
+// http://localhost:5000/api/test
+// Method : GET
 
-
+app.get("/api/test", (request, response) => {
+  response.status(200).send("Node js API is working fine");
+})
 
 
 const portNumber = process.env.PORT || 5000;
