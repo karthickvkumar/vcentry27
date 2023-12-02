@@ -12,6 +12,7 @@ const GETAllUsersPage = () => {
 
     axios.get(url)
       .then((response) => {
+        console.log(response);
         UpadateAllUser(response.data.users);
       })
       .catch((error) => {

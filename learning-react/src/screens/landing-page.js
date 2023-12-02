@@ -20,6 +20,8 @@ const LandingScreen = () => {
       <NavLink to="/user">Create New Account</NavLink>
       <br />
       <NavLink to="/all">Load ALL Users</NavLink>
+      <br />
+      <NavLink to="/post">Post Users Account</NavLink>
     </div>
   )
 }

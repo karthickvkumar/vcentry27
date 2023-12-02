@@ -10,6 +10,7 @@ import UserLoginPage from "./screens/user-login";
 import AccountCreationPage from "./screens/account-creation";
 import UserProfileScreen from "./screens/user-profile";
 import GETAllUsersPage from "./screens/get-all-user";
+import PostUserAccountPage from "./screens/post-user-account";
 
 function App(){
   return(
@@ -24,7 +25,7 @@ function App(){
         <Route path="account" element={<AccountCreationPage></AccountCreationPage>}></Route>
         <Route path="user" element={<UserProfileScreen></UserProfileScreen>}></Route>
         <Route path="all" element={<GETAllUsersPage></GETAllUsersPage>}></Route>
-
+        <Route path="post" element={<PostUserAccountPage></PostUserAccountPage>}></Route>
       </Routes>
     </BrowserRouter>
   )
