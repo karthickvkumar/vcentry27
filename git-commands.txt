@@ -1,0 +1,21 @@
+git init 
+// To initialze a new git project (One time)
+
+git remote add origin https://github.com/username/project.git 
+// To inform the system where uploaded files should save (one time)
+
+/// New Lap -> New GIT install
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
+
+git add . 
+// To choose the file and folder for Upload
+
+git commit -m "message"
+// To Finialize the upload process 
+
+git push origin master 
+// To start the upload process
+
+
+
