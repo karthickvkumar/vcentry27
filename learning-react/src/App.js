@@ -11,6 +11,7 @@ import AccountCreationPage from "./screens/account-creation";
 import UserProfileScreen from "./screens/user-profile";
 import GETAllUsersPage from "./screens/get-all-user";
 import PostUserAccountPage from "./screens/post-user-account";
+import NodeGetApiPage from "./screens/node-get-api";
 
 function App(){
   return(
@@ -26,6 +27,8 @@ function App(){
         <Route path="user" element={<UserProfileScreen></UserProfileScreen>}></Route>
         <Route path="all" element={<GETAllUsersPage></GETAllUsersPage>}></Route>
         <Route path="post" element={<PostUserAccountPage></PostUserAccountPage>}></Route>
+        <Route path="node" element={<NodeGetApiPage></NodeGetApiPage>}></Route>
+
       </Routes>
     </BrowserRouter>
   )

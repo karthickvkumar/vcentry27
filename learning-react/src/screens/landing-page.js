@@ -22,6 +22,8 @@ const LandingScreen = () => {
       <NavLink to="/all">Load ALL Users</NavLink>
       <br />
       <NavLink to="/post">Post Users Account</NavLink>
+      <br />
+      <NavLink to="/node">Node JS API Examples</NavLink>
     </div>
   )
 }

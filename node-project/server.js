@@ -5,6 +5,9 @@ import http from "http";
 
 const app = express();
 const server = http.createServer(app);
+const UserList = [
+  { name : "Archana"}, {name : "Deepak"}, {name : "Arun"}, {name : "Suresh"}, {name : "Karthick"}
+];
 
 app.use(cors({
   credentials : true,
@@ -20,6 +23,12 @@ app.get("/api/test", (request, response) => {
   response.status(200).send("Node js API is working fine");
 })
 
+
+// http://localhost:5000/api/user/list
+// Method : GET
+app.get("/api/user/list", (request, response) => {
+  response.status(200).send(UserList);
+});
 
 const portNumber = process.env.PORT || 5000;
 server.listen(portNumber, () => {
