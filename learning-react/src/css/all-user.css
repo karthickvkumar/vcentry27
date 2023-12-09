@@ -10,3 +10,16 @@
   flex-wrap: wrap;
   gap: 10px 10px;
 }
+
+.container{
+  margin-left: 50px;
+}
+
+.label{
+  width: 175px;
+  display: inline-block;
+}
+
+.space{
+  margin-bottom: 5px;
+}

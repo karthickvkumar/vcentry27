@@ -62,6 +62,33 @@ app.post("/api/user/create", (request, response) => {
 
 // CRUD Operation Code Begin
 
+/*
+URL: http://localhost:5000/api/create/record
+METHOD : POST
+Payload
+{
+  username : string,
+  email : string,
+  age : number,
+  location : string
+}
+*/
+app.post("/api/create/record", (request, response) => {
+  const incomingData = request.body;
+  const age = parseInt(incomingData.age);
+  
+  const sql_query = `INSERT INTO karthickkumar_table (username, email, age, location) VALUES ('${incomingData.username}', '${incomingData.email}', ${age}, '${incomingData.location}')`;
+
+  connection.query(sql_query, (error, result) => {
+    if(error){
+      response.status(500).send(error);
+    }
+    else{
+      response.status(200).send(result);
+    }
+  })
+
+})
 
 
 const portNumber = process.env.PORT || 5000;
