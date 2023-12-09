@@ -87,7 +87,22 @@ app.post("/api/create/record", (request, response) => {
       response.status(200).send(result);
     }
   })
+})
 
+// URL : http://localhost:5000/api/read/record
+// METHOD : GET
+
+app.get("/api/read/record", (request, response) => {
+  const sql_query = `SELECT * FROM karthickkumar_table`;
+
+  connection.query(sql_query, (error, result) => {
+    if(error){
+      response.status(500).send(error);
+    }
+    else{
+      response.status(200).send(result);
+    }
+  })
 })
 
 
