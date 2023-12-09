@@ -24,6 +24,8 @@ const LandingScreen = () => {
       <NavLink to="/post">Post Users Account</NavLink>
       <br />
       <NavLink to="/node">Node JS API Examples</NavLink>
+      <br />
+      <NavLink to="/crud">Simple CRUD Operation using Node JS</NavLink>
     </div>
   )
 }

@@ -13,6 +13,23 @@ app.use(cors({
 
 app.use(express.json());
 
+const connection = mysql.createConnection({
+  host : "db4free.net",
+  user : "vcentry",
+  password : "test@123",
+  database : "travelix",
+  port : 3306
+});
+
+connection.connect((error) => {
+  if(error){
+    throw error;
+  }
+  else{
+    console.log("MYSQL Server has been connected");
+  }
+})
+
 // http://localhost:5000/api/test
 // Method : GET
 app.get("/api/test", (request, response) => {
@@ -41,6 +58,11 @@ app.post("/api/user/create", (request, response) => {
   UserList.push(incomingData);
   response.status(200).send("User profile has been created");  
 })
+
+
+// CRUD Operation Code Begin
+
+
 
 const portNumber = process.env.PORT || 5000;
 server.listen(portNumber, () => {

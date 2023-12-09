@@ -1,0 +1,9 @@
+USE travelix;
+CREATE TABLE karthickkumar_table (username varchar(255), email varchar(255), age int(3), location varchar(255), id int NOT NULL AUTO_INCREMENT, PRIMARY KEY(id));
+
+==========================================
+
+USE travelix;
+INSERT INTO karthickkumar_table (username, email, age, location) VALUES ('karthickvelraj', 'k@yahoo.in', 28, 'chennai');
+
+==========================================
