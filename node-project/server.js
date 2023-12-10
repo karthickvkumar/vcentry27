@@ -132,6 +132,24 @@ app.put("/api/update/record/:id", (request, response) => {
       response.status(200).send(result);
     }
   })
+});
+
+// URL : http://localhost:5000/api/delete/record/2
+// METHODS : DELETE 
+
+app.delete("/api/delete/record/:id", (request, response) => {
+  const incomingId = request.params.id;
+
+  const sql_query = `DELETE FROM karthickkumar_table WHERE id=${incomingId};`;
+  connection.query(sql_query, (error, result) => {
+    if(error){
+      response.status(500).send(error);
+    }
+    else{
+      response.status(200).send(result);
+    }
+  })
+
 })
 
 

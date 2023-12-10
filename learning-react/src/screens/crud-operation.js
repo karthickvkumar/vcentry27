@@ -92,6 +92,20 @@ const CrudOperationPage = () => {
       })
   }
 
+  const deleteRecord = (id) => {
+    const url = "http://localhost:5000/api/delete/record/" + id;
+
+    axios.delete(url)
+      .then((response) => {
+        console.log(response);
+        alert("Record has been Deleted");
+        readRecords();
+      })
+      .catch((error) => {
+        console.error(error);
+      })
+  }
+
   const recordMap = recordList.map((value, index) => {
     return(
       <tr key={index}>
@@ -102,6 +116,7 @@ const CrudOperationPage = () => {
         <td>{value.location}</td>
         <td>
           <button onClick={() => updateRecord(value)}>update</button>
+          <button onClick={() => deleteRecord(value.id)} >delete</button>
         </td>
       </tr>
     )
