@@ -7,3 +7,6 @@ USE travelix;
 INSERT INTO karthickkumar_table (username, email, age, location) VALUES ('karthickvelraj', 'k@yahoo.in', 28, 'chennai');
 
 ==========================================
+
+USE travelix;
+UPDATE karthickkumar_table SET username='velraj', email='v@live.in', age=30, location='Chennai' WHERE id=9

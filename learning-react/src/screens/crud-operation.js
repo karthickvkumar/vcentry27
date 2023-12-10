@@ -6,12 +6,13 @@ import "../css/all-user.css";
 const CrudOperationPage = () => {
 
   useEffect(() => {
-    loadRecords();
+    readRecords();
   }, []);
   
   const [recordList, updateRecordList] = useState([]);
 
   const [formSubmited, updateSubmited] = useState(false);
+  const [editFormSubmited, updateEditSubmited] = useState(false);
 
   const [formData, updateDateForm] = useState({
     username : "",
@@ -39,19 +40,52 @@ const CrudOperationPage = () => {
           location : ""
         });
         updateSubmited(false);
-        loadRecords();
+        readRecords();
       })
       .catch((error) => {
         console.error(error);
       })
   }
 
-  const loadRecords = () => {
+  const readRecords = () => {
     const url = "http://localhost:5000/api/read/record";
 
     axios.get(url)
       .then((response) => {
         updateRecordList(response.data);
+      })
+      .catch((error) => {
+        console.error(error);
+      })
+  }
+
+  const updateRecord = (value) => {
+    
+    updateDateForm({...formData, 
+      username : value.username,
+      email : value.email,
+      age : value.age,
+      location : value.location,
+      id : value.id
+    });
+  } 
+  
+  const updateProfile = () => {
+    const url = "http://localhost:5000/api/update/record/" + formData.id;
+    updateEditSubmited(true);
+
+    axios.put(url, formData)
+      .then((response) => {
+        console.log(response);
+        alert("Update has been completed");
+        updateEditSubmited(false);
+        updateDateForm({...formData, 
+          username : "",
+          email : "",
+          age : "",
+          location : ""
+        });
+        readRecords();
       })
       .catch((error) => {
         console.error(error);
@@ -66,6 +100,9 @@ const CrudOperationPage = () => {
         <td>{value.email}</td>
         <td>{value.age}</td>
         <td>{value.location}</td>
+        <td>
+          <button onClick={() => updateRecord(value)}>update</button>
+        </td>
       </tr>
     )
   })
@@ -91,6 +128,8 @@ const CrudOperationPage = () => {
       </div>
       <button onClick={() => createProfile() }>{formSubmited ? "Loading.." : "Create Profile"}</button>
 
+      <button onClick={() => updateProfile() }>{editFormSubmited ? "InProgress.." : "Update Profile"}</button>
+
       <table>
         <thead>
           <tr>
@@ -99,6 +138,7 @@ const CrudOperationPage = () => {
             <th>Email</th>
             <th>Age</th>
             <th>Location</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>

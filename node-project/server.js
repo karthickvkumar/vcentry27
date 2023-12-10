@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import mysql from "mysql";
-import http from "http";
+import http, { METHODS } from "http";
 
 const app = express();
 const server = http.createServer(app);
@@ -94,6 +94,35 @@ app.post("/api/create/record", (request, response) => {
 
 app.get("/api/read/record", (request, response) => {
   const sql_query = `SELECT * FROM karthickkumar_table`;
+
+  connection.query(sql_query, (error, result) => {
+    if(error){
+      response.status(500).send(error);
+    }
+    else{
+      response.status(200).send(result);
+    }
+  })
+});
+
+/*
+URL : http://localhost:5000/api/update/record/2
+METHODS : PUT 
+Payload 
+{
+  username : string,
+  email : string,
+  age : number,
+  location : string
+}
+*/
+app.put("/api/update/record/:id", (request, response) => {
+  const incomingData = request.body;
+  const incomingId = request.params.id;
+
+  const age = parseInt(incomingData.age);
+
+  const sql_query = `UPDATE karthickkumar_table SET username='${incomingData.username}', email='${incomingData.email}', age=${age}, location='${incomingData.location}' WHERE id=${incomingId}`;
 
   connection.query(sql_query, (error, result) => {
     if(error){
