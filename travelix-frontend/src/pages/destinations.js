@@ -9,51 +9,51 @@ const DestinationsPage = () => {
     <div>
       <HeaderComponent></HeaderComponent>
 
-      <section class="hero-wrap hero-wrap-2 js-fullheight" style={{ backgroundImage: `url(${require("../images/bg_4.jpg")})` }}>
-        <div class="overlay js-fullheight"></div>
-        <div class="container">
-          <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
-            <div class="col-md-9 pb-5 text-center">
-              <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i
-                      class="fa fa-chevron-right"></i></a></span> <span>Tour List <i class="fa fa-chevron-right"></i></span>
+      <section className="hero-wrap hero-wrap-2 js-fullheight" style={{ backgroundImage: `url(${require("../images/bg_4.jpg")})` }}>
+        <div className="overlay js-fullheight"></div>
+        <div className="container">
+          <div className="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
+            <div className="col-md-9 pb-5 text-center">
+              <p className="breadcrumbs"><span className="mr-2"><a href="index.html">Home <i
+                      className="fa fa-chevron-right"></i></a></span> <span>Tour List <i className="fa fa-chevron-right"></i></span>
               </p>
-              <h1 class="mb-0 bread">Tours List</h1>
+              <h1 className="mb-0 bread">Tours List</h1>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="ftco-section ftco-no-pb">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="search-wrap-1">
-              <form action="#" class="search-property-1">
-                <div class="row no-gutters">
-                  <div class="col-lg d-flex">
-                    <div class="form-group p-4 border-0">
+      <section className="ftco-section ftco-no-pb">
+      <div className="container">
+        <div className="row">
+          <div className="col-md-12">
+            <div className="search-wrap-1">
+              <form action="#" className="search-property-1">
+                <div className="row no-gutters">
+                  <div className="col-lg d-flex">
+                    <div className="form-group p-4 border-0">
                       <label for="#">Destination</label>
-                      <div class="form-field">
-                        <div class="icon"><span class="fa fa-search"></span></div>
-                        <input type="text" class="form-control" placeholder="Search place"/>
+                      <div className="form-field">
+                        <div className="icon"><span className="fa fa-search"></span></div>
+                        <input type="text" className="form-control" placeholder="Search place"/>
                       </div>
                     </div>
                   </div>
-                  <div class="col-lg d-flex">
-                    <div class="form-group p-4 border-0">
+                  <div className="col-lg d-flex">
+                    <div className="form-group p-4 border-0">
                       <label for="#">Location/Area</label>
-                      <div class="form-field">
-                        <div class="icon"><span class="fa fa-location-arrow"></span></div>
-                        <input type="text" class="form-control" placeholder="Search place"/>
+                      <div className="form-field">
+                        <div className="icon"><span className="fa fa-location-arrow"></span></div>
+                        <input type="text" className="form-control" placeholder="Search place"/>
                       </div>
                     </div>
                   </div>
                   
                   
-                  <div class="col-lg d-flex">
-                    <div class="form-group d-flex w-100 border-0">
-                      <div class="form-field w-100 align-items-center d-flex">
-                        <input type="submit" value="Search" class="align-self-stretch form-control btn btn-primary"/>
+                  <div className="col-lg d-flex">
+                    <div className="form-group d-flex w-100 border-0">
+                      <div className="form-field w-100 align-items-center d-flex">
+                        <input type="submit" value="Search" className="align-self-stretch form-control btn btn-primary"/>
                       </div>
                     </div>
                   </div>
@@ -66,21 +66,21 @@ const DestinationsPage = () => {
     </section>
 
 
-    <section class="ftco-section">
-    <div class="container">
-      <div class="row">
+    <section className="ftco-section">
+    <div className="container">
+      <div className="row">
 
         <DestinationPlaceComponent></DestinationPlaceComponent>    
         <DestinationPlaceComponent></DestinationPlaceComponent>    
         <DestinationPlaceComponent></DestinationPlaceComponent>    
     
       </div>
-      <div class="row mt-5">
-        <div class="col text-center">
-          <div class="block-27">
+      <div className="row mt-5">
+        <div className="col text-center">
+          <div className="block-27">
             <ul>
               <li><a href="#">&lt;</a></li>
-              <li class="active"><span>1</span></li>
+              <li className="active"><span>1</span></li>
               <li><a href="#">2</a></li>
               <li><a href="#">3</a></li>
               <li><a href="#">4</a></li>

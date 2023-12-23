@@ -9,6 +9,7 @@ import ContactPage from './pages/contact';
 
 import "./css/flaticon.css";
 import "./css/style.css";
+import "./css/custom.css";
 
 const App = () => {
   return (

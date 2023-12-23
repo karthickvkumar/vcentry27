@@ -4,21 +4,21 @@ import { NavLink } from 'react-router-dom';
 const HeaderComponent = () => {
   return (
     <div>
-      <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-        <div class="container">
-          <a class="navbar-brand" href="index.html">Travelix<span>Travel Agency</span></a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+      <nav className="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+        <div className="container">
+         <NavLink to="/" className="navbar-brand">Travelix<span>Travel Agency</span></NavLink>
+          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
             aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="oi oi-menu"></span> Menu
+            <span className="oi oi-menu"></span> Menu
           </button>
 
-          <div class="collapse navbar-collapse" id="ftco-nav">
-            <ul class="navbar-nav ml-auto">
-              <NavLink to="/" class="nav-item"><a class="nav-link">Home</a></NavLink>
-              <NavLink to="/about" class="nav-item"><a class="nav-link">About</a></NavLink>
-              <NavLink to="/destination" class="nav-item"><a class="nav-link">Destination</a></NavLink>
-              <NavLink to="/hotel" class="nav-item"><a class="nav-link">Hotel</a></NavLink>
-              <NavLink to="/contact" class="nav-item"><a class="nav-link">Contact</a></NavLink>
+          <div className="collapse navbar-collapse" id="ftco-nav">
+            <ul className="navbar-nav ml-auto">
+              <NavLink to="/" className="nav-item"><a className="nav-link">Home</a></NavLink>
+              <NavLink to="/about" className="nav-item"><a className="nav-link">About</a></NavLink>
+              <NavLink to="/destination" className="nav-item"><a className="nav-link">Destination</a></NavLink>
+              <NavLink to="/hotel" className="nav-item"><a className="nav-link">Hotel</a></NavLink>
+              <NavLink to="/contact" className="nav-item"><a className="nav-link">Contact</a></NavLink>
             </ul>
           </div>
         </div>
