@@ -9,6 +9,13 @@ const AdminDestinationPage = () => {
     destinationCount : ""
   });
 
+  const [formError, updateFormError] = useState({
+    destinationName : false,
+    location : false,
+    destinationImage : false,
+    destinationCount : false
+  })
+
 
   const getValuefromInput = (event) => {
     updateDestinationForm({...destinationForm, [event.target.id] : event.target.value});
@@ -16,6 +23,14 @@ const AdminDestinationPage = () => {
 
   const uploadDestination = () => {
     console.log(destinationForm);
+
+    updateFormError({...formError, 
+      destinationName : destinationForm.destinationName == "" ? true : false,
+      location : destinationForm.location == "" ? true : false,
+      destinationImage : destinationForm.destinationImage == "" ? true : false,
+      destinationCount : destinationForm.destinationCount == "" ? true : false
+    })
+
   }
 
   const uploadImage = (event) => {
@@ -26,6 +41,7 @@ const AdminDestinationPage = () => {
     reader.readAsDataURL(file);
 
     reader.onload = () => {
+      // console.log(reader.result);
       updateDestinationForm({...destinationForm, "destinationImage" : reader.result});
     }
   }
@@ -37,22 +53,22 @@ const AdminDestinationPage = () => {
         <div>
           <label>Enter destination name :</label>
           <input type='text' id="destinationName" placeholder='Destination Name' onChange={getValuefromInput}/>
-          {false && <span className='error-msg'>Missing Destination Name</span>}
+          {formError.destinationName && <span className='error-msg'>Missing Destination Name</span>}
         </div>
         <div>
           <label>Enter loacation / area :</label>
           <input type='text' id="location" placeholder='Location/Area' onChange={getValuefromInput}/>
-          { false && <span className='error-msg'>Missing Destination Name</span>}
+          { formError.location && <span className='error-msg'>Missing Destination Location</span>}
         </div>
         <div>
           <label>Enter destination image :</label>
           <input type='file' id="destinationImage" accept='.png, .jpeg, .jpg' onChange={uploadImage}/>
-          {false && <span className='error-msg'>Missing Destination Image</span>}
+          {formError.destinationImage && <span className='error-msg'>Missing Destination Image</span>}
         </div>
         <div>
           <label>Enter destination count :</label>
           <input type='text' id="destinationCount" placeholder='Destination Count' onChange={getValuefromInput} />
-          {false && <span className='error-msg'>Missing Destination Image</span>}
+          {formError.destinationCount && <span className='error-msg'>Missing Destination Count</span>}
         </div>
         <button onClick={() => uploadDestination()}>{true ? "Upload Destination" : "Loading..."}</button>
 
