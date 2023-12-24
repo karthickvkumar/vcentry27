@@ -1,6 +1,11 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
+import axios from 'axios';
 
 const AdminDestinationPage = () => {
+
+  useEffect(() => {
+    loadDestinations();
+  }, []);
 
   const [destinationForm, updateDestinationForm] = useState({
     destinationName : "",
@@ -16,6 +21,9 @@ const AdminDestinationPage = () => {
     destinationCount : false
   })
 
+  const [isLoading, updateIsLoading] = useState(true);
+
+  const [destinationRecord, updateDestinationRecord] = useState([]);
 
   const getValuefromInput = (event) => {
     updateDestinationForm({...destinationForm, [event.target.id] : event.target.value});
@@ -23,14 +31,27 @@ const AdminDestinationPage = () => {
 
   const uploadDestination = () => {
     console.log(destinationForm);
+    updateIsLoading(false);
 
     updateFormError({...formError, 
       destinationName : destinationForm.destinationName == "" ? true : false,
       location : destinationForm.location == "" ? true : false,
       destinationImage : destinationForm.destinationImage == "" ? true : false,
       destinationCount : destinationForm.destinationCount == "" ? true : false
-    })
+    });
 
+    const url = "http://localhost:5000/api/create/destination";
+
+    axios.post(url, destinationForm)
+      .then((response) => {
+        alert(response.data);
+        updateIsLoading(true);
+        loadDestinations();
+      })
+      .catch((error) => {
+        console.error(error);
+        updateIsLoading(true);
+      })
   }
 
   const uploadImage = (event) => {
@@ -45,6 +66,31 @@ const AdminDestinationPage = () => {
       updateDestinationForm({...destinationForm, "destinationImage" : reader.result});
     }
   }
+
+  const loadDestinations = () => {
+    const url = "http://localhost:5000/api/list/destination";
+
+    axios.get(url)
+      .then((response) => {
+        updateDestinationRecord(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+  }
+
+  const List = destinationRecord.map((value, index) => {
+    return(
+      <tr key={index}>
+        <td>{value.destinationName}</td>
+        <td>{value.location}</td>
+        <td>
+          <img src={value.destinationImage}  width="100"/>
+        </td>
+        <td>{value.destinationCount}</td>
+      </tr>
+    )
+  })
 
   return (
     <div>
@@ -70,8 +116,24 @@ const AdminDestinationPage = () => {
           <input type='text' id="destinationCount" placeholder='Destination Count' onChange={getValuefromInput} />
           {formError.destinationCount && <span className='error-msg'>Missing Destination Count</span>}
         </div>
-        <button onClick={() => uploadDestination()}>{true ? "Upload Destination" : "Loading..."}</button>
+        <button onClick={() => uploadDestination()}>{isLoading ? "Upload Destination" : "Uploading..."}</button>
 
+        <div>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Destination Name</th>
+              <th>Destination Location</th>
+              <th>Destination Image</th>
+              <th>Destination Count</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            { List }
+          </tbody>
+        </table>
+        </div>
       </div>
     </div>
   );

@@ -30,6 +30,44 @@ connection.connect((error) => {
   else{
     console.log("MySQL Connected");
   }
+});
+
+// URL : http://localhost:5000/api/create/destination
+// Method : POST 
+// payload 
+// {
+//   destinationCount : string 
+//   destinationImage : string 
+//   destinationName : string 
+//   location : string 
+// }
+
+app.post("/api/create/destination", (request, response) => {
+  const sql_query = `INSERT INTO travelix_destinations (destinationName , location , destinationImage , destinationCount) VALUES ('${request.body.destinationName}', '${request.body.location}', '${request.body.destinationImage}', '${request.body.destinationCount}')`;
+
+  connection.query(sql_query, (error, result) => {
+    if(error){
+      response.status(500).send(error);
+    }
+    else{
+      response.status(200).send("Destination has been created");
+    }
+  })
+});
+
+// URL : http://localhost:5000/api/list/destination
+// Method : GET 
+
+app.get("/api/list/destination", (request, response) => {
+  const sql_query = `SELECT * FROM travelix_destinations`;
+  connection.query(sql_query, (error, result) => {
+    if(error){
+      response.status(500).send(error);
+    }
+    else{
+      response.status(200).send(result);
+    }
+  })
 })
 
 
