@@ -3,6 +3,8 @@ import axios from 'axios';
 
 const AdminDestinationPage = () => {
 
+  const baseURL = "http://localhost:5000";
+
   useEffect(() => {
     loadDestinations();
   }, []);
@@ -40,7 +42,7 @@ const AdminDestinationPage = () => {
       destinationCount : destinationForm.destinationCount == "" ? true : false
     });
 
-    const url = "http://localhost:5000/api/create/destination";
+    const url = baseURL + "/api/create/destination";
 
     axios.post(url, destinationForm)
       .then((response) => {
@@ -68,7 +70,7 @@ const AdminDestinationPage = () => {
   }
 
   const loadDestinations = () => {
-    const url = "http://localhost:5000/api/list/destination";
+    const url = baseURL + "/api/list/destination";
 
     axios.get(url)
       .then((response) => {
@@ -77,6 +79,18 @@ const AdminDestinationPage = () => {
       .catch((error) => {
         console.log(error);
       })
+  }
+
+  const deleteDestiantion = (id) => {
+    const url = baseURL + "/api/delete/destination/" + id;
+    axios.delete(url)
+    .then((response) => {
+      alert(response.data);
+      loadDestinations();
+    })
+    .catch((error) => {
+      console.log(error);
+    })
   }
 
   const List = destinationRecord.map((value, index) => {
@@ -88,6 +102,7 @@ const AdminDestinationPage = () => {
           <img src={value.destinationImage}  width="100"/>
         </td>
         <td>{value.destinationCount}</td>
+        <td><button onClick={() => deleteDestiantion(value.id)}>Delete</button></td>
       </tr>
     )
   })

@@ -70,6 +70,18 @@ app.get("/api/list/destination", (request, response) => {
   })
 })
 
+app.delete("/api/delete/destination/:id", (request, response) => {
+  const sql_query = `DELETE FROM travelix_destinations WHERE id=${request.params.id}`;
+  connection.query(sql_query, (error, result) => {
+    if(error){
+      response.status(500).send(error);
+    }
+    else{
+      response.status(200).send("Deleted successfully");
+    }
+  })
+})
+
 
 const port = process.env.PORT || 5000;
 server.listen(port, () => {

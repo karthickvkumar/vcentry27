@@ -26,3 +26,9 @@ DELETE FROM karthickkumar_table WHERE id=13;
 
 USE travelix;
 CREATE TABLE travelix_destinations (destinationName varchar(255), location varchar(255), destinationImage LONGTEXT, destinationCount varchar(255), id int NOT NULL AUTO_INCREMENT, PRIMARY KEY(id));
+
+=======================================
+
+USE travelix;
+
+CREATE TABLE travelix_hotels(name varchar(255), destination varchar(255), image LONGTEXT, price varchar(255), location varchar(255), available boolean, id int NOT NULL AUTO_INCREMENT, PRIMARY KEY(id));
