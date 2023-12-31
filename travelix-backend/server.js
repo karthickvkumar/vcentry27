@@ -3,7 +3,7 @@
 import express from "express";
 import cors from "cors";
 import mysql from "mysql";
-import http from "http";
+import http, { request } from "http";
 
 const app = express();
 const server = http.createServer(app);
@@ -80,6 +80,32 @@ app.delete("/api/delete/destination/:id", (request, response) => {
       response.status(200).send("Deleted successfully");
     }
   })
+});
+
+app.post("/api/create/hotel", (request, response) => {
+  const sql_query =  `INSERT INTO travelix_hotels (name, destination, image, price, location, available) VALUES ('${request.body.name}', '${request.body.destination}', '${request.body.image}', '${request.body.price}',  '${request.body.location}', ${request.body.available})`;
+
+  connection.query(sql_query, (error, result) => {
+    if(error){
+      response.status(500).send(error);
+    }
+    else{
+      response.status(200).send("Hotel has been created successfully");
+    }
+  })
+})
+
+app.get("/api/load/hotels", (request, response) => {
+  const sql_query = `SELECT * FROM travelix_hotels`;
+  connection.query(sql_query, (error, result) => {
+    if(error){
+      response.status(500).send(error);
+    }
+    else{
+      response.status(200).send(result);
+    }
+  })
+
 })
 
 

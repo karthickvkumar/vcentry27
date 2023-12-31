@@ -1,6 +1,14 @@
-import React, {useState} from 'react';
+import axios from 'axios';
+import React, {useState, useEffect} from 'react';
 
 const AdminHotel = () => {
+  const baseURL = "http://localhost:5000";
+
+  useEffect(() => {
+    loadHotels();
+  }, []);
+
+  const [hotelList, loadHotelList] = useState([]);
 
   const [hotelForm, updateHotelForm] = useState({
     name : "",
@@ -36,8 +44,44 @@ const AdminHotel = () => {
   }
 
   const addHotelDetails = () => {
-    console.log(hotelForm);
+    // console.log(hotelForm);
+    const url = baseURL + "/api/create/hotel";
+    
+    axios.post(url, hotelForm)
+      .then((response) => {
+        alert(response.data);
+        loadHotels();
+      })
+      .catch((error) => {
+        console.error(error);
+      })
   }
+
+  const loadHotels = () => {
+    const url = baseURL + "/api/load/hotels";
+    axios.get(url)
+      .then((response) => {
+        loadHotelList(response.data);
+      })
+      .catch((error) => {
+        console.error(error);
+      })
+  }
+
+  const hotelMapList = hotelList.map((value, index) => {
+    return(
+      <tr key={index}>
+        <td>{value.name}</td>
+        <td>{value.destination}</td>
+        <td>
+          <img src={value.image} width={50} />
+        </td>
+        <td>{value.price}</td>
+        <td>{value.location}</td>
+        <td>{value.available == 1 ? 'YES' : 'NO'}</td>
+      </tr>
+    )
+  })
 
   return (
     <div>
@@ -69,6 +113,22 @@ const AdminHotel = () => {
         </div>
         <button onClick={() => addHotelDetails()}>Upload Hotel Details</button>
       </div>
+
+      <table className="table table-bordered">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Destination</th>
+            <th>Image</th>
+            <th>Price</th>
+            <th>Loacation</th>
+            <th>Avaliblity</th>
+          </tr>
+        </thead>
+        <tbody>
+          { hotelMapList }
+        </tbody>
+      </table>
     </div>
   );
 };
