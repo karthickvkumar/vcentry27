@@ -13,6 +13,7 @@ import GETAllUsersPage from "./screens/get-all-user";
 import PostUserAccountPage from "./screens/post-user-account";
 import NodeGetApiPage from "./screens/node-get-api";
 import CrudOperationPage from "./screens/crud-operation";
+import MasterPage from "./screens/master-page";
 
 function App(){
   return(
@@ -30,6 +31,7 @@ function App(){
         <Route path="post" element={<PostUserAccountPage></PostUserAccountPage>}></Route>
         <Route path="node" element={<NodeGetApiPage></NodeGetApiPage>}></Route>
         <Route path="crud" element={<CrudOperationPage></CrudOperationPage>}></Route>
+        <Route path="master" element={<MasterPage></MasterPage>}></Route>
 
       </Routes>
     </BrowserRouter>

@@ -23,3 +23,15 @@
 .space{
   margin-bottom: 5px;
 }
+
+.header{
+  height: 100px;
+  border: 2px solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search{
+  font-size: 32px;
+}

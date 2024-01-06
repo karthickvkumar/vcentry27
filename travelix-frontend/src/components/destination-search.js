@@ -1,6 +1,13 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 const DestinationSearchComponent = () => {
+
+  const [destinationForm, updateDestFrom] = useState({
+    destinationName : "",
+    destinationLocation : ""
+  });
+  
+
   return (
     <form action="#" className="search-property-1">
       <div className="row no-gutters">

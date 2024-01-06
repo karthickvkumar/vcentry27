@@ -26,6 +26,8 @@ const LandingScreen = () => {
       <NavLink to="/node">Node JS API Examples</NavLink>
       <br />
       <NavLink to="/crud">Simple CRUD Operation using Node JS</NavLink>
+      <br />
+      <NavLink to="/master">Data Sharing Concepts</NavLink>
     </div>
   )
 }
