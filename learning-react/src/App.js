@@ -13,7 +13,8 @@ import GETAllUsersPage from "./screens/get-all-user";
 import PostUserAccountPage from "./screens/post-user-account";
 import NodeGetApiPage from "./screens/node-get-api";
 import CrudOperationPage from "./screens/crud-operation";
-import MasterPage from "./screens/master-page";
+import MasterPage from "./screens/master-page";\
+import SecondMasterPage from "./screens/second-master-page";
 
 function App(){
   return(
@@ -32,6 +33,7 @@ function App(){
         <Route path="node" element={<NodeGetApiPage></NodeGetApiPage>}></Route>
         <Route path="crud" element={<CrudOperationPage></CrudOperationPage>}></Route>
         <Route path="master" element={<MasterPage></MasterPage>}></Route>
+        <Route path="master2" element={<SecondMasterPage></SecondMasterPage>}></Route>
 
       </Routes>
     </BrowserRouter>

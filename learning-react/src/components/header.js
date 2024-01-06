@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 
 const HeaderComponent = (props) => {
-  console.log(props);
+  // console.log(props);
 
   const [searchForm, updateSearchForm] = useState("");
 
