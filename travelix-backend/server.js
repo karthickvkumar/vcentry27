@@ -108,6 +108,26 @@ app.get("/api/load/hotels", (request, response) => {
 
 })
 
+app.get("/api/search/destination", (request, response) => {
+  const destinationName = request.query.destinationName;
+  const destinationLocation = request.query.destinationLocation;
+  
+  let sql_query = `SELECT * FROM travelix_destinations WHERE destinationName='${destinationName}' OR location='${destinationLocation}'`;
+
+  if(destinationName == "" && destinationLocation == ""){
+    response.status(500).send("No Search Data");
+    return;
+  }
+
+  connection.query(sql_query, (error, result) => {
+    if(error){
+      response.status(500).send(error);
+    }
+    else{
+      response.status(200).send(result);
+    }
+  })
+})
 
 const port = process.env.PORT || 5000;
 server.listen(port, () => {

@@ -1,11 +1,22 @@
-import React from 'react';
+import React, {useContext} from 'react';
 
 import HeaderComponent from '../components/header';
 import DestinationPlaceComponent from '../components/destination-place';
 import DestinationSearchComponent from '../components/destination-search';
 import FooterComponent from '../components/footer';
 
+import DataSharing from '../context-api';
+
 const DestinationsPage = () => {
+
+  const context = useContext(DataSharing);
+
+  const searchMap = context.searchList.map((value, index) => {
+    return(
+      <DestinationPlaceComponent key={index} info={value}></DestinationPlaceComponent> 
+    )
+  })
+
   return (
     <div>
       <HeaderComponent></HeaderComponent>
@@ -39,12 +50,8 @@ const DestinationsPage = () => {
 
     <section className="ftco-section">
     <div className="container">
-      <div className="row">
-
-        <DestinationPlaceComponent></DestinationPlaceComponent>    
-        <DestinationPlaceComponent></DestinationPlaceComponent>    
-        <DestinationPlaceComponent></DestinationPlaceComponent>    
-    
+      <div className="row"> 
+        {searchMap}
       </div>
       <div className="row mt-5">
         <div className="col text-center">
