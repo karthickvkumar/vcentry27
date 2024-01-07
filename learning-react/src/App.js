@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 
 import LoginScreen from "./screens/login-page";
@@ -13,30 +13,41 @@ import GETAllUsersPage from "./screens/get-all-user";
 import PostUserAccountPage from "./screens/post-user-account";
 import NodeGetApiPage from "./screens/node-get-api";
 import CrudOperationPage from "./screens/crud-operation";
-import MasterPage from "./screens/master-page";\
+import MasterPage from "./screens/master-page";
 import SecondMasterPage from "./screens/second-master-page";
 
-function App(){
-  return(
-    <BrowserRouter>
-      <Routes>
-        <Route path="" element={<LandingScreen></LandingScreen>}></Route>
-        <Route path="login" element={<LoginScreen></LoginScreen>}></Route>
-        <Route path="home" element={<HomeScreen></HomeScreen>}></Route>
-        <Route path="contact" element={<ContactScreen></ContactScreen>}></Route>
-        <Route path="todo" element={<ToDoScreen></ToDoScreen>}></Route>
-        <Route path="signup" element={<UserLoginPage></UserLoginPage>}></Route>
-        <Route path="account" element={<AccountCreationPage></AccountCreationPage>}></Route>
-        <Route path="user" element={<UserProfileScreen></UserProfileScreen>}></Route>
-        <Route path="all" element={<GETAllUsersPage></GETAllUsersPage>}></Route>
-        <Route path="post" element={<PostUserAccountPage></PostUserAccountPage>}></Route>
-        <Route path="node" element={<NodeGetApiPage></NodeGetApiPage>}></Route>
-        <Route path="crud" element={<CrudOperationPage></CrudOperationPage>}></Route>
-        <Route path="master" element={<MasterPage></MasterPage>}></Route>
-        <Route path="master2" element={<SecondMasterPage></SecondMasterPage>}></Route>
+import DataSharing from "./context-api";
 
-      </Routes>
-    </BrowserRouter>
+function App(){
+
+  const [searchHistory, updateSearchHistory] = useState([]);
+
+  const dataExchange = (data) => {
+    updateSearchHistory(data);
+  }
+
+  return(
+    <DataSharing.Provider value={{ dataExchange, searchHistory }}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="" element={<LandingScreen></LandingScreen>}></Route>
+          <Route path="login" element={<LoginScreen></LoginScreen>}></Route>
+          <Route path="home" element={<HomeScreen></HomeScreen>}></Route>
+          <Route path="contact" element={<ContactScreen></ContactScreen>}></Route>
+          <Route path="todo" element={<ToDoScreen></ToDoScreen>}></Route>
+          <Route path="signup" element={<UserLoginPage></UserLoginPage>}></Route>
+          <Route path="account" element={<AccountCreationPage></AccountCreationPage>}></Route>
+          <Route path="user" element={<UserProfileScreen></UserProfileScreen>}></Route>
+          <Route path="all" element={<GETAllUsersPage></GETAllUsersPage>}></Route>
+          <Route path="post" element={<PostUserAccountPage></PostUserAccountPage>}></Route>
+          <Route path="node" element={<NodeGetApiPage></NodeGetApiPage>}></Route>
+          <Route path="crud" element={<CrudOperationPage></CrudOperationPage>}></Route>
+          <Route path="master" element={<MasterPage></MasterPage>}></Route>
+          <Route path="master2" element={<SecondMasterPage></SecondMasterPage>}></Route>
+
+        </Routes>
+      </BrowserRouter>
+    </DataSharing.Provider>
   )
 }
 
