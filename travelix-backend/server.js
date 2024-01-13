@@ -16,12 +16,29 @@ app.use(cors({
 app.use(express.json({ limit : "10mb" }));
 
 const connection = mysql.createConnection({
-  host : "db4free.net",
-  user : "vcentry",
-  password : "test@123",
-  database : "travelix",
-  port : 3306
+  host : "localhost",
+  user : "root",
+  password : "",
+  database : "travelix"
 });
+
+/*
+CREATE DATABASE travelix;
+
+USE travelix;
+CREATE TABLE travelix_destinations (destinationName varchar(255), location varchar(255), destinationImage LONGTEXT, destinationCount varchar(255), id int NOT NULL AUTO_INCREMENT, PRIMARY KEY(id));
+
+USE travelix;
+CREATE TABLE travelix_hotels(name varchar(255), destination varchar(255), image LONGTEXT, price varchar(255), location varchar(255), available boolean, id int NOT NULL AUTO_INCREMENT, PRIMARY KEY(id));
+*/
+
+// const connection = mysql.createConnection({
+//   host : "db4free.net",
+//   user : "vcentry",
+//   password : "test@123",
+//   database : "travelix",
+//   port : 3306
+// });
 
 connection.connect((error) => {
   if(error){
