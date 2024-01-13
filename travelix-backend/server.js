@@ -112,7 +112,8 @@ app.get("/api/search/destination", (request, response) => {
   const destinationName = request.query.destinationName;
   const destinationLocation = request.query.destinationLocation;
   
-  let sql_query = `SELECT * FROM travelix_destinations WHERE destinationName='${destinationName}' OR location='${destinationLocation}'`;
+  let sql_query = `SELECT * FROM travelix_destinations WHERE destinationName LIKE '${destinationName}%' AND location LIKE '${destinationLocation}%'`;
+  
 
   if(destinationName == "" && destinationLocation == ""){
     response.status(500).send("No Search Data");
@@ -127,6 +128,33 @@ app.get("/api/search/destination", (request, response) => {
       response.status(200).send(result);
     }
   })
+});
+
+app.get("/api/search/hotel", (request, response) => {
+  const destinationName = request.query.destinationName;
+
+  const sql_query = `SELECT * from travelix_hotels WHERE destination LIKE '${destinationName}%'`;
+
+
+  if(destinationName == ""){
+    response.status(500).send("No Search Data");
+    return;
+  }
+
+  connection.query(sql_query, (error, result) => {
+    if(error){
+      response.status(500).send(error);
+    }
+    else{
+
+      const avaialbleHotles = result.filter((value , index) => {
+        return value.available == 1
+      })
+
+      response.status(200).send(avaialbleHotles);
+    }
+  })
+
 })
 
 const port = process.env.PORT || 5000;

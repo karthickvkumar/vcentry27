@@ -1,11 +1,22 @@
-import React from 'react';
+import React, {useContext} from 'react';
 
 import HeaderComponent from '../components/header';
 import HotelRoomComponent from '../components/hotel-room';
 import HotelSearchComponent from '../components/hotel-search';
 import FooterComponent from '../components/footer';
 
+import DataSharing from '../context-api';
+
 const HotelsPage = () => {
+
+  const context = useContext(DataSharing);
+
+  const hotelSearchList = context.searchList.map((value, index) => {
+    return(
+      <HotelRoomComponent key={index} info={value}></HotelRoomComponent>
+    )
+  })
+
   return (
     <div>
       <HeaderComponent></HeaderComponent>
@@ -38,9 +49,9 @@ const HotelsPage = () => {
       <section className="ftco-section">
         <div className="container">
           <div className="row">
-            <HotelRoomComponent></HotelRoomComponent>
-            <HotelRoomComponent></HotelRoomComponent>
-            <HotelRoomComponent></HotelRoomComponent>
+
+            {hotelSearchList}
+
           </div>
           <div className="row mt-5">
             <div className="col text-center">
