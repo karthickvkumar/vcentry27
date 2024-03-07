@@ -28,6 +28,10 @@ const LandingScreen = () => {
       <NavLink to="/crud">Simple CRUD Operation using Node JS</NavLink>
       <br />
       <NavLink to="/master">Data Sharing Concepts</NavLink>
+      <br />
+      <NavLink to="/cal">Google Calander List</NavLink>
+      <br />
+      <NavLink to="/all-interest">Load All Interest</NavLink>
     </div>
   )
 }

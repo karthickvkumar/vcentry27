@@ -1,0 +1,29 @@
+{
+  "interests" : [
+    {
+      "id": 100,
+      "name" : "Football",
+      "image" : "https://img.olympics.com/images/image/private/t_s_pog_staticContent_hero_xl_2x/f_auto/primary/ngdjbafv3twathukjbq2"
+    },
+    {
+      "id": 101,
+      "name" : "Cricket",
+      "image" : "https://cdn.britannica.com/63/211663-050-A674D74C/Jonny-Bairstow-batting-semifinal-match-England-Australia-2019.jpg"
+    },
+    {
+      "id": 102,
+      "name" : "Baseball",
+      "image" : "https://media.npr.org/assets/img/2021/12/01/gettyimages-1350959374_slide-cfc68139d5d293865e924e213d385afb01169b67.jpg"
+    },
+    {
+      "id": 103,
+      "name" : "Hockey",
+      "image" : "https://img.olympics.com/images/image/private/t_s_pog_staticContent_hero_lg_2x/f_auto/primary/b2unl1gppjiic0fld0em"
+    },
+    {
+      "id": 104,
+      "name" : "Dogeball",
+      "image" : "https://media.yourschoolgames.com/images/Dodgeball_School_Games_1.width-550.png"
+    }
+  ]
+}

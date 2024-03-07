@@ -1,0 +1,34 @@
+{
+  "interest_details" : [
+    {
+      "id": 100,
+      "name" : "Football",
+      "image" : "https://img.olympics.com/images/image/private/t_s_pog_staticContent_hero_xl_2x/f_auto/primary/ngdjbafv3twathukjbq2",
+      "description" : "Football is a family of team sports that involve, to varying degrees, kicking a ball to score a goal. Unqualified, the word football normally means the form of football that is the most popular where the word is used. Sports commonly called football include association football (known as soccer in Australia, Canada, South Africa, the United States, and sometimes in Ireland and New Zealand); Australian rules football; Gaelic football; gridiron football (specifically American football, Arena football, or Canadian football);" 
+    },
+    {
+      "id": 101,
+      "name" : "Cricket",
+      "image" : "https://cdn.britannica.com/63/211663-050-A674D74C/Jonny-Bairstow-batting-semifinal-match-England-Australia-2019.jpg",
+      "description" : "Cricket is a bat-and-ball game played between two teams of eleven players on a field at the centre of which is a 22-yard (20-metre) pitch with a wicket at each end, each comprising two bails balanced on three stumps. Two players from the batting team (the striker and nonstriker) stand in front of either wicket, with one player from the fielding team (the bowler) bowling the ball towards the striker's wicket from the opposite end of the pitch. The striker's goal is to hit the bowled ball and then switch places with the nonstriker, with the batting team scoring one run for each exchange. Runs are also scored when the ball reaches or crosses the boundary of the field or when the ball is bowled illegally." 
+    },
+    {
+      "id": 102,
+      "name" : "Baseball",
+      "image" : "https://media.npr.org/assets/img/2021/12/01/gettyimages-1350959374_slide-cfc68139d5d293865e924e213d385afb01169b67.jpg",
+      "description" : "Baseball is a bat-and-ball sport played between two teams of nine players each, taking turns batting and fielding. The game occurs over the course of several plays, with each play generally beginning when a player on the fielding team, called the pitcher, throws a ball that a player on the batting team, called the batter, tries to hit with a bat. The objective of the offensive team (batting team) is to hit the ball into the field of play, away from the other team's players, allowing its players to run the bases, having them advance counter-clockwise around four bases to score what are called runs." 
+    },
+    {
+      "id": 103,
+      "name" : "Hockey",
+      "image" : "https://img.olympics.com/images/image/private/t_s_pog_staticContent_hero_lg_2x/f_auto/primary/b2unl1gppjiic0fld0em",
+      "description" : "Hockey is a term used to denote a family of various types of both summer and winter team sports which originated on either an outdoor field, sheet of ice, or dry floor such as in a gymnasium. While these sports vary in specific rules, numbers of players, apparel, and playing surface, they share broad characteristics of two opposing teams using a stick to propel a ball or disk into a goal." 
+    },
+    {
+      "id": 104,
+      "name" : "Dogeball",
+      "image" : "https://media.yourschoolgames.com/images/Dodgeball_School_Games_1.width-550.png",
+      "description" : "Dodgeball is a team sport in which players on two opposing teams try to throw balls and hit opponents while avoiding being hit themselves. The objective of each team is to eliminate all members of the opposing team by hitting them with thrown balls, catching a ball thrown by an opponent, or inducing an opponent to commit a violation, such as stepping outside the court." 
+    }
+  ]
+}

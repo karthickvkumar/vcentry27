@@ -17,6 +17,10 @@ import MasterPage from "./screens/master-page";
 import SecondMasterPage from "./screens/second-master-page";
 
 import DataSharing from "./context-api";
+import GoogleSigninPage from "./screens/google-signin";
+import GoogleCalanderPage from "./screens/google-calander";
+import DisplayAllInterest from "./screens/display-all-intrest";
+import DisplaySelectedInterest from "./screens/display-selected-intrest";
 
 function App(){
 
@@ -44,6 +48,11 @@ function App(){
           <Route path="crud" element={<CrudOperationPage></CrudOperationPage>}></Route>
           <Route path="master" element={<MasterPage></MasterPage>}></Route>
           <Route path="master2" element={<SecondMasterPage></SecondMasterPage>}></Route>
+          <Route path="google" element={<GoogleSigninPage></GoogleSigninPage>}></Route>
+          <Route path="cal" element={<GoogleCalanderPage></GoogleCalanderPage>}></Route>
+
+          <Route path="all-interest" element={<DisplayAllInterest></DisplayAllInterest>}></Route>
+          <Route path="interest/:interestName" element={<DisplaySelectedInterest></DisplaySelectedInterest>}></Route>
 
         </Routes>
       </BrowserRouter>
